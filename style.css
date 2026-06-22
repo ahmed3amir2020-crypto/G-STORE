@@ -7,83 +7,121 @@ font-family:'Cairo',sans-serif;
 
 body{
 
-background:linear-gradient(160deg,#062D67,#0B4E8C,#49BFD0,#00B8C4);
-min-height:100vh;
+background:linear-gradient(135deg,#062D67,#0C5E94,#49BFD0,#00B8C4);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+
 display:flex;
 justify-content:center;
 align-items:center;
-padding:25px;
+
+min-height:100vh;
+
+padding:20px;
+
+overflow-x:hidden;
 
 }
 
-.container{
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+.bg{
+
+position:fixed;
+
+inset:0;
+
+background-image:
+
+radial-gradient(circle at 15% 20%,rgba(255,255,255,.15),transparent 20%),
+
+radial-gradient(circle at 80% 10%,rgba(255,255,255,.12),transparent 18%),
+
+radial-gradient(circle at 80% 80%,rgba(255,255,255,.10),transparent 20%);
+
+z-index:-1;
+
+}
+
+.card{
 
 width:100%;
 max-width:430px;
 
-background:rgba(255,255,255,.08);
+background:rgba(255,255,255,.10);
 
-backdrop-filter:blur(18px);
+backdrop-filter:blur(20px);
 
-border:1px solid rgba(255,255,255,.15);
+border:1px solid rgba(255,255,255,.18);
 
-border-radius:28px;
+border-radius:30px;
 
 padding:30px;
 
-text-align:center;
+box-shadow:0 20px 45px rgba(0,0,0,.30);
 
-box-shadow:0 15px 40px rgba(0,0,0,.35);
+text-align:center;
 
 }
 
-.logo img{
+.logo-box img{
 
 width:170px;
 
 margin-bottom:10px;
 
+filter:drop-shadow(0 10px 15px rgba(0,0,0,.25));
+
 }
 
 h1{
 
-color:#ffffff;
+font-size:40px;
 
-font-size:38px;
+font-weight:800;
+
+color:white;
+
+letter-spacing:1px;
+
+}
+
+.company{
+
+color:#DDF8FF;
+
+font-size:21px;
+
+margin-top:6px;
 
 font-weight:700;
 
 }
 
-.sub{
-
-color:#9FE8F6;
-
-font-size:22px;
-
-margin-top:5px;
-
-}
-
-.title{
-
-color:#fff;
-
-opacity:.85;
+.desc{
 
 margin:15px 0 30px;
 
-font-size:16px;
+color:white;
+
+opacity:.9;
+
+font-size:15px;
 
 }
-
 .buttons{
 
 display:flex;
 
 flex-direction:column;
 
-gap:15px;
+gap:14px;
 
 }
 
@@ -97,11 +135,11 @@ justify-content:center;
 
 gap:12px;
 
+padding:16px;
+
+border-radius:18px;
+
 text-decoration:none;
-
-padding:17px;
-
-border-radius:16px;
 
 font-size:18px;
 
@@ -109,7 +147,17 @@ font-weight:700;
 
 color:#fff;
 
-transition:.3s;
+transition:.30s;
+
+box-shadow:0 8px 18px rgba(0,0,0,.20);
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px) scale(1.03);
+
+box-shadow:0 15px 28px rgba(0,0,0,.30);
 
 }
 
@@ -119,21 +167,29 @@ font-size:22px;
 
 }
 
-.btn:hover{
+.whatsapp{
 
-transform:translateY(-3px) scale(1.02);
-
-box-shadow:0 10px 25px rgba(0,0,0,.25);
+background:#25D366;
 
 }
 
-.whatsapp{background:#25D366;}
+.call{
 
-.call{background:#1976D2;}
+background:#1976D2;
 
-.web{background:#00ACC1;}
+}
 
-.facebook{background:#1877F2;}
+.website{
+
+background:#0097A7;
+
+}
+
+.facebook{
+
+background:#1877F2;
+
+}
 
 .instagram{
 
@@ -141,35 +197,51 @@ background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);
 
 }
 
-.tiktok{background:#111827;}
+.tiktok{
 
-.map{background:#00B894;}
+background:#111827;
 
-.save{background:#006D77;}
+}
 
-footer{
+.location{
 
-margin-top:30px;
+background:#00A884;
 
-color:#fff;
+}
+
+.save{
+
+background:#005F73;
+
+}
+
+.footer{
+
+margin-top:28px;
+
+color:white;
 
 font-size:14px;
 
-opacity:.8;
+opacity:.85;
+
+line-height:1.8;
 
 }
 
 @media(max-width:480px){
 
-.container{
+.card{
 
-padding:20px;
+padding:22px;
+
+border-radius:24px;
 
 }
 
-.logo img{
+.logo-box img{
 
-width:140px;
+width:145px;
 
 }
 
@@ -179,11 +251,17 @@ font-size:32px;
 
 }
 
+.company{
+
+font-size:18px;
+
+}
+
 .btn{
 
-font-size:16px;
-
 padding:15px;
+
+font-size:16px;
 
 }
 
